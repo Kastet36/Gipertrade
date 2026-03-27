@@ -1405,6 +1405,12 @@
     font-size: var(--font-base);
     font-weight: var(--font-weight-semibold);
     color: var(--theme-text);
+    margin-bottom: 4px;
+  }
+  .popup-desc {
+    font-size: var(--font-sm);
+    color: var(--theme-muted-text);
+    line-height: 1.5;
   }
   .popup-close {
     width: 32px;
@@ -1437,7 +1443,10 @@
 <div class="popup-overlay" id="popup-demo" onclick="closePopupOnOverlay(event)">
   <div class="popup-card">
     <div class="popup-header">
-      <span class="popup-title">Протестировать бесплатно</span>
+      <div>
+        <div class="popup-title">Протестируйте Гипертрейд бесплатно</div>
+        <div class="popup-desc">Менеджер свяжется с вами в течение дня, проведёт презентацию сервиса, ответит на вопросы и активирует тестовый период.</div>
+      </div>
       <button class="popup-close" onclick="closePopup('popup-demo')" aria-label="Закрыть">
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
       </button>
@@ -1718,7 +1727,7 @@
     </div>
     <div style="margin-top: 96px; display: flex; align-items: center; gap: 40px; flex-wrap: wrap;">
       <p style="flex: 1; min-width: 260px; font-size: 1rem; line-height: 1.7; color: var(--theme-muted-text); margin: 0;">Полный доступ ко всем функциям Гипертрейд бесплатно на 2 недели. Никаких обязательств. Просто запустите и посмотрите как система работает на вашем ассортименте.</p>
-      <a href="#contact" class="btn-primary" style="flex-shrink: 0;">Протестировать бесплатно</a>
+      <a href="#" class="btn-primary" style="flex-shrink: 0;" onclick="openPopup('popup-demo'); return false;">Протестировать бесплатно</a>
     </div>
   </div>
 </section>
@@ -2190,7 +2199,7 @@
     <h2>Готовы попробовать?</h2>
     <p>Две недели полного доступа бесплатно. Подключение за несколько часов.</p>
     <div class="final-cta-btns">
-      <a href="#contact" class="btn-primary">Протестировать бесплатно</a>
+      <a href="#" class="btn-primary" onclick="openPopup('popup-demo'); return false;">Протестировать бесплатно</a>
       <a href="#faq" class="btn-ghost-white">Узнать подробнее</a>
     </div>
   </div>
