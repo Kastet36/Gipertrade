@@ -1592,13 +1592,17 @@
     color: var(--theme-text);
     margin-bottom: 4px;
   }
-  .independence-point-text span {
-    font-size: var(--font-sm);
-    color: var(--theme-muted-text);
-    line-height: 1.55;
-  }
+   .independence-point-text span {
+     font-size: var(--font-sm);
+     color: var(--theme-muted-text);
+     line-height: 1.55;
+   }
 
-  /* Browser-mockup visual */
+   @media (max-width: 768px) {
+     .independence-points { grid-template-columns: 1fr; }
+   }
+
+   /* Browser-mockup visual */
   .browser-visual {
     background: var(--theme-bg);
     border: 1px solid var(--theme-border);
