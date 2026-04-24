@@ -1916,11 +1916,47 @@
   .cookie-bar.hidden { display: none; }
 
   @media (max-width: 480px) {
-    .popup-overlay { padding: 0; align-items: flex-end; }
-    .popup-card { border-radius: var(--radius-xl) var(--radius-xl) 0 0; max-width: 100%; }
-    .cookie-bar { left: 10px; right: 10px; bottom: 10px; }
-    .cookie-bar-inner { flex-direction: column; align-items: stretch; }
-    .cookie-btn { width: 100%; justify-content: center; }
+     .popup-overlay { padding: 0; align-items: flex-end; }
+     .popup-card { border-radius: var(--radius-xl) var(--radius-xl) 0 0; max-width: 100%; }
+     .cookie-bar { left: 10px; right: 10px; bottom: 10px; }
+     .cookie-bar-inner { flex-direction: column; align-items: stretch; }
+     .cookie-btn { width: 100%; justify-content: center; }
+   }
+
+  /* ── MARQUEE (Бегущая строка) ── */
+  .marquee-banner {
+    background: linear-gradient(90deg, var(--theme-primary), #c41e3a);
+    padding: 12px 0;
+    overflow: hidden;
+    position: relative;
+  }
+  .marquee-content {
+    display: flex;
+    gap: 60px;
+    animation: marquee 20s linear infinite;
+    white-space: nowrap;
+  }
+  .marquee-text {
+    font-size: 0.95rem;
+    font-weight: var(--font-weight-semibold);
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .marquee-icon {
+    width: 20px;
+    height: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .marquee-content:hover {
+    animation-play-state: paused;
   }
 
 </style>
@@ -2233,6 +2269,30 @@
     </div>
   </div>
 </section>
+
+<!-- MARQUEE BANNER -->
+<div class="marquee-banner" aria-label="Информация о регистрации">
+  <div class="marquee-content">
+    <div class="marquee-text">
+      <svg class="marquee-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 10l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Гипертрейд включён в реестр Российского ПО. Свидетельство № 2026661379
+    </div>
+    <div class="marquee-text">
+      <svg class="marquee-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 10l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Гипертрейд включён в реестр Российского ПО. Свидетельство № 2026661379
+    </div>
+    <div class="marquee-text">
+      <svg class="marquee-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 10l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Гипертрейд включён в реестр Российского ПО. Свидетельство № 2026661379
+    </div>
+  </div>
+</div>
 
 <!-- INDEPENDENCE -->
 <section class="independence" aria-label="Без 1С на вашей стороне">
