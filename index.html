@@ -1925,34 +1925,75 @@
 
   /* ── MARQUEE (Бегущая строка) ── */
   .marquee-banner {
-    background: linear-gradient(90deg, var(--theme-primary), #c41e3a);
-    padding: 12px 0;
+    background: var(--theme-text);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding: 13px 0;
     overflow: hidden;
     position: relative;
   }
+  .marquee-banner::before,
+  .marquee-banner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 80px;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .marquee-banner::before {
+    left: 0;
+    background: linear-gradient(to right, var(--theme-text), transparent);
+  }
+  .marquee-banner::after {
+    right: 0;
+    background: linear-gradient(to left, var(--theme-text), transparent);
+  }
   .marquee-content {
     display: flex;
-    gap: 60px;
-    animation: marquee 20s linear infinite;
+    align-items: center;
+    gap: 0;
+    animation: marquee 110s linear infinite;
     white-space: nowrap;
+    width: max-content;
+  }
+  .marquee-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 40px;
   }
   .marquee-text {
-    font-size: 0.95rem;
-    font-weight: var(--font-weight-semibold);
-    color: #FFFFFF;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: rgba(255,255,255,0.75);
+    letter-spacing: 0.02em;
+    display: inline;
+  }
+  .marquee-text strong {
+    color: rgba(255,255,255,0.95);
+    font-weight: 500;
   }
   .marquee-icon {
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    color: var(--theme-primary);
+    flex-shrink: 0;
+  }
+  .marquee-sep {
+    display: inline-flex;
+    align-items: center;
+    color: rgba(255,255,255,0.2);
+    font-size: 0.85rem;
+    flex-shrink: 0;
+    padding: 0 4px;
   }
   @keyframes marquee {
-    0% { transform: translateX(0); }
+    0%   { transform: translateX(0); }
     100% { transform: translateX(-50%); }
   }
   .marquee-content:hover {
@@ -2191,9 +2232,79 @@
           Данные в реальном времени
         </div>
       </div>
+     </div>
+   </div>
+ </section>
+
+<!-- MARQUEE BANNER -->
+<div class="marquee-banner" aria-label="Гипертрейд включён в реестр Российского ПО">
+  <div class="marquee-content" aria-hidden="true">
+
+    <div class="marquee-item">
+      <svg class="marquee-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3L4 7v5c0 5.25 3.6 10.15 8 11.35C16.4 22.15 20 17.25 20 12V7l-8-4z" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="marquee-text">Гипертрейд включён в <strong>реестр отечественного ПО</strong> — свидетельство № 2026661379</span>
     </div>
+    <span class="marquee-sep">✦</span>
+    <div class="marquee-item">
+      <svg class="marquee-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3L4 7v5c0 5.25 3.6 10.15 8 11.35C16.4 22.15 20 17.25 20 12V7l-8-4z" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="marquee-text">Гипертрейд включён в <strong>реестр отечественного ПО</strong> — свидетельство № 2026661379</span>
+    </div>
+    <span class="marquee-sep">✦</span>
+    <div class="marquee-item">
+      <svg class="marquee-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3L4 7v5c0 5.25 3.6 10.15 8 11.35C16.4 22.15 20 17.25 20 12V7l-8-4z" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="marquee-text">Гипертрейд включён в <strong>реестр отечественного ПО</strong> — свидетельство № 2026661379</span>
+    </div>
+    <span class="marquee-sep">✦</span>
+    <div class="marquee-item">
+      <svg class="marquee-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3L4 7v5c0 5.25 3.6 10.15 8 11.35C16.4 22.15 20 17.25 20 12V7l-8-4z" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="marquee-text">Гипертрейд включён в <strong>реестр отечественного ПО</strong> — свидетельство № 2026661379</span>
+    </div>
+    <span class="marquee-sep">✦</span>
+    <div class="marquee-item">
+      <svg class="marquee-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3L4 7v5c0 5.25 3.6 10.15 8 11.35C16.4 22.15 20 17.25 20 12V7l-8-4z" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="marquee-text">Гипертрейд включён в <strong>реестр отечественного ПО</strong> — свидетельство № 2026661379</span>
+    </div>
+    <span class="marquee-sep">✦</span>
+    <div class="marquee-item">
+      <svg class="marquee-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3L4 7v5c0 5.25 3.6 10.15 8 11.35C16.4 22.15 20 17.25 20 12V7l-8-4z" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="marquee-text">Гипертрейд включён в <strong>реестр отечественного ПО</strong> — свидетельство № 2026661379</span>
+    </div>
+    <span class="marquee-sep">✦</span>
+
+    <!-- Дубль для бесшовного цикла -->
+    <div class="marquee-item">
+      <svg class="marquee-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3L4 7v5c0 5.25 3.6 10.15 8 11.35C16.4 22.15 20 17.25 20 12V7l-8-4z" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="marquee-text">Гипертрейд включён в <strong>реестр отечественного ПО</strong> — свидетельство № 2026661379</span>
+    </div>
+    <span class="marquee-sep">✦</span>
+    <div class="marquee-item">
+      <svg class="marquee-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3L4 7v5c0 5.25 3.6 10.15 8 11.35C16.4 22.15 20 17.25 20 12V7l-8-4z" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="marquee-text">Гипертрейд включён в <strong>реестр отечественного ПО</strong> — свидетельство № 2026661379</span>
+    </div>
+    <span class="marquee-sep">✦</span>
+    <div class="marquee-item">
+      <svg class="marquee-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3L4 7v5c0 5.25 3.6 10.15 8 11.35C16.4 22.15 20 17.25 20 12V7l-8-4z" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="marquee-text">Гипертрейд включён в <strong>реестр отечественного ПО</strong> — свидетельство № 2026661379</span>
+    </div>
+    <span class="marquee-sep">✦</span>
+    <div class="marquee-item">
+      <svg class="marquee-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3L4 7v5c0 5.25 3.6 10.15 8 11.35C16.4 22.15 20 17.25 20 12V7l-8-4z" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="marquee-text">Гипертрейд включён в <strong>реестр отечественного ПО</strong> — свидетельство № 2026661379</span>
+    </div>
+    <span class="marquee-sep">✦</span>
+    <div class="marquee-item">
+      <svg class="marquee-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3L4 7v5c0 5.25 3.6 10.15 8 11.35C16.4 22.15 20 17.25 20 12V7l-8-4z" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="marquee-text">Гипертрейд включён в <strong>реестр отечественного ПО</strong> — свидетельство № 2026661379</span>
+    </div>
+    <span class="marquee-sep">✦</span>
+    <div class="marquee-item">
+      <svg class="marquee-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3L4 7v5c0 5.25 3.6 10.15 8 11.35C16.4 22.15 20 17.25 20 12V7l-8-4z" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="marquee-text">Гипертрейд включён в <strong>реестр отечественного ПО</strong> — свидетельство № 2026661379</span>
+    </div>
+    <span class="marquee-sep">✦</span>
+
   </div>
-</section>
+</div>
 
 <!-- AUTOMATION -->
 <section class="automation" id="automation" aria-label="Что автоматизирует Гипертрейд">
@@ -2269,30 +2380,6 @@
     </div>
   </div>
 </section>
-
-<!-- MARQUEE BANNER -->
-<div class="marquee-banner" aria-label="Информация о регистрации">
-  <div class="marquee-content">
-    <div class="marquee-text">
-      <svg class="marquee-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M6 10l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      Гипертрейд включён в реестр Российского ПО. Свидетельство № 2026661379
-    </div>
-    <div class="marquee-text">
-      <svg class="marquee-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M6 10l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      Гипертрейд включён в реестр Российского ПО. Свидетельство № 2026661379
-    </div>
-    <div class="marquee-text">
-      <svg class="marquee-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M6 10l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      Гипертрейд включён в реестр Российского ПО. Свидетельство № 2026661379
-    </div>
-  </div>
-</div>
 
 <!-- INDEPENDENCE -->
 <section class="independence" aria-label="Без 1С на вашей стороне">
